@@ -22,7 +22,7 @@ const authorData = {
 
     authorSection: {
         paragraphs: [
-            `Rodjen 20.8.2004. u Beogradu, završio "ETŠ Nikola Tesla", smer multimedija.`
+            `Rodjen 20.8.2004. u Beogradu, završio ETŠ "Nikola Tesla", smer multimedija.`
         ]
     }
 };
