@@ -6,7 +6,7 @@ const authorData = {
         links: [
             { text: "POČETNA", href: "index.html" },
             { text: "AUTOR", href: "#author" },
-            { text: "DOCS", href: "documentation.pdf" },
+            { text: "DOCS", href: "Dokumentacija.pdf" },
             { text: "DOWNLOAD", href: "download.zip" }
         ]
     },
@@ -102,8 +102,8 @@ function renderAuthorContent() {
     },
     links: [
         { text: "Početna", href: "index.html" },
-        { text: "O Autoru", href: "author.html" },
-        { text: "Docs", href: "documentation.pdf" },
+        { text: "O Autoru", href: "autor.html" },
+        { text: "Docs", href: "Dokumentacija.pdf" },
         { text: "Download", href: "download.zip" }
     ],
     social: [

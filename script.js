@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <img src="${product.img}" alt="${product.title}">
             <p class="cena3">${product.price}</p>
             <br/>
-            <button type="button" class="pr-btn">Poručite!</button>
+            <a href="#contact" text-decoration="none"><button type="button" class="pr-btn">Poručite!</button></a>
         </div>
         `;
     });
@@ -159,7 +159,6 @@ document.addEventListener("DOMContentLoaded", function () {
             <div class="product-row">
                 ${productsHTML}
             </div>
-            <button class="prdbtn">Pogledajte sve u ponudi!</button>
         </div>
 
         ${aboutHTML}
@@ -173,22 +172,17 @@ document.addEventListener("DOMContentLoaded", function () {
         location: "Bulevar Arsenija Čarnojevića 69v, Novi Beograd",
         instagram: "https://www.instagram.com/pilatesreformer_shopsrbija/"
     },
-    links: [
+     links: [
         { text: "Početna", href: "index.html" },
-        { text: "O Autoru", href: "products.html" },
-        { text: "O nama", href: "#about-us" },
-        { text: "Dokumentacija", href: "#contact" }
+        { text: "O Autoru", href: "autor.html" },
+        { text: "Docs", href: "Dokumentacija.pdf" },
+        { text: "Download", href: "download.zip" }
     ],
     social: [
         {
             href: "https://www.instagram.com/pilatesreformer_shopsrbija/",
             icon: "fa-instagram",
             label: "Instagram"
-        },
-        {
-            href: "rss.xml",
-            icon: "fa-rss",
-            label: "RSS"
         },
         {
             href: "sitemap.xml",
