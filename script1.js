@@ -113,11 +113,6 @@ function renderAuthorContent() {
             label: "Instagram"
         },
         {
-            href: "rss.xml",
-            icon: "fa-rss",
-            label: "RSS"
-        },
-        {
             href: "sitemap.xml",
             icon: "fa-sitemap",
             label: "Sitemap"
@@ -199,4 +194,5 @@ footer.innerHTML =`
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
+
 });
