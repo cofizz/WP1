@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <img src="${product.img}" alt="${product.title}">
             <p class="cena3">${product.price}</p>
             <br/>
-            <a href="#contact" text-decoration="none"><button type="button" class="pr-btn">Poručite!</button></a>
+            <a href="#contact" style="text-decoration: none;"><button type="button" class="pr-btn">Poručite!</button></a>
         </div>
         `;
     });
