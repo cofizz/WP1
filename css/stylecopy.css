@@ -165,30 +165,7 @@ nav ul li:nth-child(4) {
   animation: button 1s ease-out;
   margin-top: 45px;
 }
-.modal {
-  display: none; 
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); 
-  overflow: auto;
-}
 
-.modal-content {
-  background-color: #ffffff;
-  padding: 30px;
-  border-radius: 10px;
-  width: 80%; 
-  max-width: 400px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
 .contact-form {
   width: 100%;
   max-width: 400px;
@@ -357,6 +334,9 @@ textarea {
   overflow: hidden;
   background-color: rgba(255, 255, 255, 0.9);
   transition: all 0.3s ease;
+}
+.product-card a{
+  text-decoration: none;
 }
 
 .product-card:hover {
@@ -570,7 +550,7 @@ textarea {
 
 .contact-form1 button:hover {
   background-color: #C8594E;
-}
+} 
 
 #product-grid {
   display: grid;
@@ -1408,14 +1388,6 @@ footer .footer-right ul li a:hover {
       margin-left: 30px;
       margin-top: 10px;
   }
-
-  .col-2 {
-      flex-basis: 100%;
-  }
-
-  .row .col-4 {
-      max-width: 48%;
-  }
   .left-content1{
     margin-bottom:110px;
   }
@@ -1457,13 +1429,6 @@ footer .footer-right ul li a:hover {
       margin-top: 10px;
   }
 
-  .col-2 {
-      flex-basis: 100%;
-  }
-
-  .row .col-4 {
-      max-width: 48%;
-  }
   .content1 {
     display: flex;
     flex-direction: column;
@@ -1552,14 +1517,6 @@ body{background-color: rgb(202, 202, 202);}
   padding: 20px;
   margin-left: 20px;
  }
- #product-grid {
-   display: grid;
-   grid-template-columns: repeat(2, 280px);
-   grid-gap: 10px;
-   margin-right: 40px;
-   justify-content: center;
- }
-
 
 }
 
@@ -1575,14 +1532,6 @@ body{background-color: rgb(202, 202, 202);}
 
   .navbar nav ul li a{
     font-size: 17px;
-  }
-  
-  .col-2 {
-      flex-basis: 100%;
-  }
-
-  .row .col-4 {
-      max-width: 48%;
   }
   .logo {
     width: 80px;
@@ -1704,13 +1653,7 @@ body{background-color: rgb(202, 202, 202);}
   font-size: 15px;
 }
 
-.col-2 {
-    flex-basis: 100%;
-}
 
-.row .col-4 {
-    max-width: 48%;
-}
 .logo {
   width: 80px;
   height: 80px;
@@ -1829,13 +1772,6 @@ body{background-color: rgb(202, 202, 202);}
   font-size: 12px;
 }
 
-.col-2 {
-    flex-basis: 100%;
-}
-
-.row .col-4 {
-    max-width: 48%;
-}
 .logo {
   width: 60px;
   height: 60px;
@@ -1944,15 +1880,6 @@ body{background-color: rgb(202, 202, 202);}
   padding: 20px;
   margin-right: 20px;
  }
- #product-grid {
-  display: grid;
-  grid-template-columns: repeat(1, 280px);
-  grid-gap: 30px;
-  margin-left: 0;
-  margin-right: 77px;
-  justify-content: center;
-}
-
 }
 @media (max-width: 479px) {
   .navbar nav ul {
@@ -1964,14 +1891,6 @@ body{background-color: rgb(202, 202, 202);}
 .navbar nav ul li {
     margin-left: 10px;
     margin-top: 10px;
-}
-
-.col-2 {
-    flex-basis: 100%;
-}
-
-.row .col-4 {
-    max-width: 48%;
 }
 .logo {
   width: 60px;
@@ -2070,14 +1989,6 @@ body{background-color: rgb(202, 202, 202);}
   min-width: 280px;
   padding: 20px;
   margin-right: 20px;
- }
- #product-grid {
-   display: grid;
-   grid-template-columns: repeat(1, 280px);
-   grid-gap: 30px;
-   margin-left: 0;
-   margin-right: 77px;
-   justify-content: center;
  }
 
 }
@@ -2297,14 +2208,6 @@ background-color: rgb(202, 202, 202);}
    min-width: 280px;
    padding: 20px;
   }
-  #product-grid {
-    display: grid;
-    grid-template-columns: repeat(1, 280px);
-    grid-gap: 30px;
-    margin-right: 76px;
-    margin-left: 0;
-    justify-content: center;
-  }
   .author-hero {
     text-align: center;
     position: relative;
@@ -2322,37 +2225,10 @@ background-color: rgb(202, 202, 202);}
     justify-content: center;
     z-index: 1;
 }
-
-.col-2 img:first-of-type {
-  margin-top: 0;
-  margin-bottom: 2px;
-  -webkit-box-shadow: 0px 0px 72px 0px rgba(0,0,0,0.1);
-  -moz-box-shadow: 0px 0px 72px 0px rgba(0,0,0,0.1);
-  box-shadow: 0px 0px 72px 0px rgba(0,0,0,0.1);
-}
-.col-2.bg-color {
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  bottom: 23px;
-  margin-bottom: 125px;
-  width: 100%;
-  padding-left: 5px;
-}
-.col-2 h1 {
-  color: black;
-  font-size: 36px;
-  margin: 15px 0 10px 15px;
-}
 .row {
   display: grid;
   justify-content: center;
   align-items: center;
-}
-
-.col-4 {
-  flex-basis: 100%;
-  min-width: 280px; 
 }
 
 .small-container {
@@ -2362,7 +2238,6 @@ background-color: rgb(202, 202, 202);}
   box-sizing: border-box;
 }
 
-  
 .footer-left{margin-right: 35px;
 padding: 5px;
 
