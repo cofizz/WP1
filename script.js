@@ -1,11 +1,19 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+   
+    
+    window.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
     const menuItems = [
         { text: "POČETNA", link: "#container" },
         { text: "AUTOR", link: "autor.html" },
         { text: "DOCS", link: "documentation.pdf" },
         { text: "DOWNLOAD", link: "download.zip" }
     ];
+    
 
     const heroSekcija = {
         title: "Pilates Reformer Shop",
@@ -21,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
         menuHTML += `<li><a href="${item.link}">${item.text}</a></li>`;
     });
 
-    container.innerHTML = `
+    container.innerHTML += `
         <nav class="navbar">
             <a href="">
                 <img src="css/imgs/logo.jpg" class="logo" alt="logo"/>
@@ -33,9 +41,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 </ul>
             </nav>
 
-            <a href="#contact" class="mail-a">
-                <i class="fa fa-envelope fa-3x"></i>
-            </a>
+            <a href="#" class="mail-a">
+            <i class="fa fa-envelope fa-3x" class="mail-icon"></i>
+          </a>
         </nav>
 
         <div class="row">
@@ -48,6 +56,18 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
         </div>
     `;
+    /* pop up forma */
+    const modal = document.getElementById("popUpModal");
+    
+
+    function toggleModal(event) {
+        event.preventDefault();
+        modal.style.display = modal.style.display === "block" ? "none" : "block";
+    }
+
+    document.querySelectorAll('.mail-a, .close, .dugme').forEach(function(element) {
+        element.addEventListener('click', toggleModal);
+    });
 
     /* animacija za nav */
     const navbar = document.querySelector('.navbar');
@@ -86,84 +106,54 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     ];
 
-    let productsHTML ="";
-    products.forEach(product => {
-        productsHTML += `
-        <div class="product-card">
-            <h3>${product.title}</h3>
-            <img src="${product.img}" alt="${product.title}">
-            <p class="cena3">${product.price}</p>
-            <br/>
-            <a href="#contact" style="text-decoration: none;"><button type="button" class="pr-btn">Poručite!</button></a>
-        </div>
-        `;
-    });
-    const aboutHTML = `
-    <div id="about-us">
-        <div class="container1">
-            <div class="content1">
-                <div class="left-content1">
-                    <img src="css/imgs/alex.jpg" alt="Vlasnik" class="slika123">
-                </div>
-                <div class="right-content1">
-                    <h2>Dobrodošli u Pilates Reformer Shop,<br>gde se inovacije i posvećenost fitnesu susreću.</h2>
-                    <p>Naša priča započinje strašću jednog ličnog trenera koji je, gradeći svoj put u svetu fitnesa, shvatio važnost kvalitetne opreme za postizanje vrhunskih rezultata.</p>
-                    <p>Sa svojom vizijom, otvorio je fitnes centar koji je brzo postao u omiljeno mesto ljubitelja zdravog načina života. Sa posvećenošću ka vrhunskom iskustvu, naš centar 
-                    postao je sinonim za kvalitet, stručnost i inspiraciju u fitnes industriji. Uz naš fitnes centar, širimo strast prema fitnesu nudeći vrhunske Pilates mašine i opremu najvišeg kvaliteta u regionu.</p>
-                    <a href="https://alexandrosarena.com/" class="btn" target="_blank">Saznajte više</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    `;
-    const contactHTML = `
-    <div id="contact">
-        <div class="content">
-            <div class="left-content">
-                <h2>Spremni za kupovinu?</h2>
-                <p>Kontaktirajte nas preko mejla!</p>
-            </div>
+    const productsSekcija = document.getElementById("products");
 
-            <div class="right-content">
-                <div class="contact-form1">
-                    <h2>Kontakt</h2>
-                    <form id="contactForm">
-                        <div class="form-group1">
-                            <input type="text" id="name" placeholder="Ime">
-                            <small class="errorMsg"></small>
-                        </div>
-                        <div class="form-group1">
-                            <input type="text" id="email" placeholder="Email">
-                            <small class="errorMsg"></small>
-                        </div>
-                        <div class="form-group1">
-                            <input type="tel" id="phone" placeholder="Telefon">
-                            <small class="errorMsg"></small>
-                        </div>
-                        <div class="form-group1">
-                            <textarea id="message" rows="4" placeholder="Poruka"></textarea>
-                            <small class="errorMsg"></small>
-                        </div>
-                        <button type="submit">Pošaljite!</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-    `;
-    const main = document.getElementById("mainContent");
+const h1 = document.createElement("h1");
+h1.textContent = "Najtraženije!";
+productsSekcija.appendChild(h1);
 
-    main.innerHTML = `
-        <div id="products">
-            <h1>Najtraženije!</h1>
-            <div class="product-row">
-                ${productsHTML}
-            </div>
-        </div>
+const row = document.createElement("div");
+row.classList.add("product-row");
+productsSekcija.appendChild(row);
 
-        ${aboutHTML}
-        ${contactHTML}
-    `;
+products.forEach(product => {
+    const card = document.createElement("div");
+    card.classList.add("product-card");
+
+    const title = document.createElement("h3");
+    title.textContent = product.title;
+
+    const img = document.createElement("img");
+    img.src = product.img;
+    img.alt = product.title;
+
+    const price = document.createElement("p");              // Dinamicko Generisanje
+    price.classList.add("cena3");
+    price.textContent = product.price;
+
+    const br = document.createElement("br");
+
+    const a = document.createElement("a");
+    a.href = "#contact";
+    a.style.textDecoration = "none";
+
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.classList.add("pr-btn");
+    btn.textContent = "Poručite!";
+
+    a.appendChild(btn);
+
+    card.appendChild(title);
+    card.appendChild(img);
+    card.appendChild(price);
+    card.appendChild(br);
+    card.appendChild(a);
+
+    row.appendChild(card);
+});
+
+    
     const footerSekcija = {
     contact: {
         title: "Kontaktirajte nas!",
@@ -231,15 +221,18 @@ footer.innerHTML =`
     </div>    
 `;
 
-const form = document.getElementById("contactForm");
+const forms = document.querySelectorAll("#contactForm")
 
-const nameInput = document.getElementById("name");
-const emailInput = document.getElementById("email");
-const phoneInput = document.getElementById("phone");
-const messageInput = document.getElementById("message");
 
+
+forms.forEach(form=> {
 form.addEventListener("submit", function(e){
     e.preventDefault();
+    const nameInput = form.querySelector("#name");
+    const surnameInput = form.querySelector("#surname");
+    const emailInput = form.querySelector("#email");
+    const phoneInput = form.querySelector("#phone");
+    const messageInput = form.querySelector("#message");
     let valid = true;
     if (nameInput.value.trim() === ""){
         setError(nameInput, "Morate uneti ime!");
@@ -249,6 +242,16 @@ form.addEventListener("submit", function(e){
         valid = false;
     } else{
         setSuccess(nameInput);
+    }
+
+    if (surnameInput.value.trim() === ""){
+        setError(surnameInput, "Morate uneti prezime!");
+        valid = false;
+    } else if (!isValidSurname(surnameInput.value.trim())){
+        setError(surnameInput, "Prezime mora poceti velikim slovom i imati najmanje 3 slova");
+        valid = false;
+    } else{
+        setSuccess(surnameInput);
     }
 
     if(!isValidEmail(emailInput.value)){
@@ -275,50 +278,6 @@ form.addEventListener("submit", function(e){
     } else{
         setSuccess(messageInput);
     }
-    if (valid){
-        
-    }
-
-    function setError(input, message){
-        const grupa = input.parentElement;
-        const small = grupa.querySelector(".errorMsg");
-
-        grupa.classList.add("error");
-        grupa.classList.remove("success");
-
-        small.textContent = message;
-        small.style.display = "block"
-    }
-
-    function setSuccess(input){
-        const grupa = input.parentElement;
-        const small = grupa.querySelector(".errorMsg");
-
-        grupa.classList.remove("error");
-        grupa.classList.add("success");
-
-        small.style.display = "none"
-    }
-
-    function isValidEmail(email){
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    }
-
-    function isValidName(name){
-        return /^[A-ZČĆŽŠĐ][a-zčćžšđ]{2,}$/.test(name);
-    }
-    
-    function isValidPhone(phone){
-        const cista = phone.replace(/\s+/g, "");
-        const regex = /^(\+381|06)[0-9\s]+$/;
-        return regex.test(phone) && cista.replace(/\D/g, "").length >= 6;
-    }
-
-    [nameInput, emailInput, phoneInput, messageInput].forEach(input =>{
-        input.addEventListener("submit", ()=>{
-            setSuccess(input);
-        });
-    })
     
     if(valid){
         const successMsg = document.createElement("p");
@@ -331,7 +290,53 @@ form.addEventListener("submit", function(e){
 
         setTimeout(() => successMsg.remove(), 3000);
     }
+    })
+function setError(input, message){
+    const small = input.nextElementSibling;
+
+    small.textContent = message;
+    small.style.display = "block";
+
+    input.classList.add("error");
+    input.classList.remove("success");
+}
+
+function setSuccess(input){
+    const small = input.nextElementSibling;
+
+    small.textContent = "";
+    small.style.display = "none";
+
+    input.classList.remove("error");
+    input.classList.add("success");
+}
+
+
+    
+
+    function isValidEmail(email){
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    function isValidName(name){
+        return /^[A-ZČĆŽŠĐ][a-zčćžšđ]{2,}$/.test(name);
+    }
+
+    function isValidSurname(surname){
+        return /^[A-ZČĆŽŠĐ][a-zčćžšđ]{2,}$/.test(surname);
+    }
+    
+    function isValidPhone(phone){
+        const cista = phone.replace(/\s+/g, "");
+        const regex = /^(\+381|06)[0-9\s]+$/;
+        return regex.test(phone) && cista.replace(/\D/g, "").length >= 6;
+    }
+
+    
+    
+  
     
 })
+
 
 });
