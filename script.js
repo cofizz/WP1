@@ -108,50 +108,50 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const productsSekcija = document.getElementById("products");
 
-const h1 = document.createElement("h1");
-h1.textContent = "Najtraženije!";
-productsSekcija.appendChild(h1);
+    const h1 = document.createElement("h1");
+    h1.textContent = "Najtraženije!";
+    productsSekcija.appendChild(h1);
 
-const row = document.createElement("div");
-row.classList.add("product-row");
-productsSekcija.appendChild(row);
+    const row = document.createElement("div");
+    row.classList.add("product-row");
+    productsSekcija.appendChild(row);
 
-products.forEach(product => {
-    const card = document.createElement("div");
-    card.classList.add("product-card");
+    products.forEach(product => {
+        const card = document.createElement("div");
+        card.classList.add("product-card");
 
-    const title = document.createElement("h3");
-    title.textContent = product.title;
+        const title = document.createElement("h3");
+        title.textContent = product.title;
 
-    const img = document.createElement("img");
-    img.src = product.img;
-    img.alt = product.title;
+        const img = document.createElement("img");
+        img.src = product.img;
+        img.alt = product.title;
 
-    const price = document.createElement("p");              // Dinamicko Generisanje
-    price.classList.add("cena3");
-    price.textContent = product.price;
+        const price = document.createElement("p");              // Dinamicko Generisanje
+        price.classList.add("cena3");
+        price.textContent = product.price;
 
-    const br = document.createElement("br");
+        const br = document.createElement("br");
 
-    const a = document.createElement("a");
-    a.href = "#contact";
-    a.style.textDecoration = "none";
+        const a = document.createElement("a");
+        a.href = "#contact";
+        a.style.textDecoration = "none";
 
-    const btn = document.createElement("button");
-    btn.type = "button";
-    btn.classList.add("pr-btn");
-    btn.textContent = "Poručite!";
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.classList.add("pr-btn");
+        btn.textContent = "Poručite!";
 
-    a.appendChild(btn);
+        a.appendChild(btn);
 
-    card.appendChild(title);
-    card.appendChild(img);
-    card.appendChild(price);
-    card.appendChild(br);
-    card.appendChild(a);
+        card.appendChild(title);
+        card.appendChild(img);
+        card.appendChild(price);
+        card.appendChild(br);
+        card.appendChild(a);
 
-    row.appendChild(card);
-});
+        row.appendChild(card);
+    });
 
     
     const footerSekcija = {
@@ -180,7 +180,7 @@ products.forEach(product => {
             label: "Sitemap"
         }
     ],
-};
+    };
     let linksHTML = "";
 
     footerSekcija.links.forEach(link => {
@@ -291,25 +291,25 @@ form.addEventListener("submit", function(e){
         setTimeout(() => successMsg.remove(), 3000);
     }
     })
-function setError(input, message){
-    const small = input.nextElementSibling;
+    function setError(input, message){
+        const small = input.nextElementSibling;
 
-    small.textContent = message;
-    small.style.display = "block";
+        small.textContent = message;
+        small.style.display = "block";
 
-    input.classList.add("error");
-    input.classList.remove("success");
-}
+        input.classList.add("error");
+        input.classList.remove("success");
+    }
 
-function setSuccess(input){
-    const small = input.nextElementSibling;
+    function setSuccess(input){
+        const small = input.nextElementSibling;
 
-    small.textContent = "";
-    small.style.display = "none";
+        small.textContent = "";
+        small.style.display = "none";
 
-    input.classList.remove("error");
-    input.classList.add("success");
-}
+        input.classList.remove("error");
+        input.classList.add("success");
+    }
 
 
     
@@ -332,11 +332,5 @@ function setSuccess(input){
         return regex.test(phone) && cista.replace(/\D/g, "").length >= 6;
     }
 
-    
-    
-  
-    
-})
-
-
+    })
 });
